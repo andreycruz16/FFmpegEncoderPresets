@@ -7,7 +7,7 @@ The scripts live in platform-specific folders:
 - `Windows/` for `.cmd` files
 - `MacOs/` for `.command` files
 
-Each script looks for supported video files in the same folder where you run it, then creates `.mkv` output files next to the originals.
+Each script creates `.mkv` output files next to the originals.
 
 ## Prerequisites
 
@@ -19,14 +19,14 @@ Before using any preset, make sure you have:
 
 Platform-specific notes:
 
-- Windows: double-clicking a `.cmd` file should open a console window and run the batch job.
+- Windows: double-click a `.cmd` file to batch-convert supported videos in that folder, or drag one or more video files onto the `.cmd` file to convert only those files.
 - macOS: `.command` files may need executable permission the first time you use them.
 
 ## How To Use
 
 1. Choose the preset you want from the `Windows/` or `MacOs/` folder.
-2. Copy the preset into the folder that contains the video files you want to convert.
-3. Run the script.
+2. On Windows, drag video files onto the `.cmd` file, or copy the preset into a folder of videos and run it.
+3. On macOS, copy the preset into the folder that contains the video files you want to convert, then run it.
 4. Wait for FFmpeg to finish processing each file.
 
 The scripts use `-n`, so FFmpeg will not overwrite an existing output file.
