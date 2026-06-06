@@ -1,7 +1,8 @@
 #!/bin/bash
 
-for f in *.MP4; do
-    [ -e "$f" ] || continue
+shopt -s nullglob nocaseglob
+
+for f in *.mp4 *.mov *.mkv *.avi *.m4v *.webm; do
 
     ffmpeg -n -i "$f" \
         -c:v libx265 \

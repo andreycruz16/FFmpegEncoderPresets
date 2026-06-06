@@ -1,5 +1,13 @@
+#!/bin/bash
+
+shopt -s nullglob nocaseglob
+
+for f in *.mp4 *.mov *.mkv *.avi *.m4v *.webm; do
 ffmpeg -n -i "$f" \
     -c:v hevc_videotoolbox \
     -q:v 65 \
     -c:a copy \
     "${f%.*} - HEVC HARDWARE CQ65.mkv"
+done
+
+read -p "Press Enter to exit..."
